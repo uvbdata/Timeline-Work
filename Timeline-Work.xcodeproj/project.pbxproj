@@ -8,20 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		DA0DD2A01DB56B950080477F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0DD29F1DB56B950080477F /* AppDelegate.swift */; };
-		DA0DD2A21DB56B950080477F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0DD2A11DB56B950080477F /* ViewController.swift */; };
 		DA0DD2A51DB56B950080477F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0DD2A31DB56B950080477F /* Main.storyboard */; };
 		DA0DD2A71DB56B950080477F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0DD2A61DB56B950080477F /* Assets.xcassets */; };
 		DA0DD2AA1DB56B950080477F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0DD2A81DB56B950080477F /* LaunchScreen.storyboard */; };
+		DA0DD2B31DB56C4C0080477F /* PostListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0DD2B21DB56C4C0080477F /* PostListTableViewController.swift */; };
+		DADA41391DB69285005DA7FF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DADA41381DB69285005DA7FF /* CloudKit.framework */; };
+		DAEB69631DB5705100C5D8ED /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB69621DB5705100C5D8ED /* PostDetailTableViewController.swift */; };
+		DAEB69651DB5713100C5D8ED /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB69641DB5713100C5D8ED /* AddPostTableViewController.swift */; };
+		DAEB69671DB5720900C5D8ED /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB69661DB5720900C5D8ED /* SearchResultsTableViewController.swift */; };
+		DAEB69691DB5724F00C5D8ED /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB69681DB5724F00C5D8ED /* Post.swift */; };
+		DAEB696B1DB5740E00C5D8ED /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB696A1DB5740E00C5D8ED /* Comment.swift */; };
+		DAEB696D1DB57F4300C5D8ED /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB696C1DB57F4300C5D8ED /* PostController.swift */; };
+		DAEB696F1DB5945300C5D8ED /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB696E1DB5945300C5D8ED /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DA0DD29C1DB56B950080477F /* Timeline-Work.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Timeline-Work.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0DD29F1DB56B950080477F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA0DD2A11DB56B950080477F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DA0DD2A41DB56B950080477F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA0DD2A61DB56B950080477F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA0DD2A91DB56B950080477F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA0DD2AB1DB56B950080477F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA0DD2B21DB56C4C0080477F /* PostListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostListTableViewController.swift; path = ../PostListTableViewController.swift; sourceTree = "<group>"; };
+		DADA41361DB69283005DA7FF /* Timeline-Work.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Timeline-Work.entitlements"; sourceTree = "<group>"; };
+		DADA41381DB69285005DA7FF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		DAEB69621DB5705100C5D8ED /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
+		DAEB69641DB5713100C5D8ED /* AddPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
+		DAEB69661DB5720900C5D8ED /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		DAEB69681DB5724F00C5D8ED /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		DAEB696A1DB5740E00C5D8ED /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		DAEB696C1DB57F4300C5D8ED /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		DAEB696E1DB5945300C5D8ED /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DADA41391DB69285005DA7FF /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +58,7 @@
 			children = (
 				DA0DD29E1DB56B950080477F /* Timeline-Work */,
 				DA0DD29D1DB56B950080477F /* Products */,
+				DADA41371DB69285005DA7FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +73,70 @@
 		DA0DD29E1DB56B950080477F /* Timeline-Work */ = {
 			isa = PBXGroup;
 			children = (
+				DADA41361DB69283005DA7FF /* Timeline-Work.entitlements */,
+				DA0DD2B71DB56CAC0080477F /* Views */,
+				DA0DD2B41DB56C600080477F /* ViewController */,
+				DA0DD2B61DB56C9E0080477F /* Controller */,
+				DA0DD2B51DB56C900080477F /* Model */,
 				DA0DD29F1DB56B950080477F /* AppDelegate.swift */,
-				DA0DD2A11DB56B950080477F /* ViewController.swift */,
-				DA0DD2A31DB56B950080477F /* Main.storyboard */,
+				DA0DD2B11DB56BB90080477F /* Supported Files */,
+			);
+			path = "Timeline-Work";
+			sourceTree = "<group>";
+		};
+		DA0DD2B11DB56BB90080477F /* Supported Files */ = {
+			isa = PBXGroup;
+			children = (
 				DA0DD2A61DB56B950080477F /* Assets.xcassets */,
 				DA0DD2A81DB56B950080477F /* LaunchScreen.storyboard */,
 				DA0DD2AB1DB56B950080477F /* Info.plist */,
 			);
-			path = "Timeline-Work";
+			name = "Supported Files";
+			sourceTree = "<group>";
+		};
+		DA0DD2B41DB56C600080477F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA0DD2B21DB56C4C0080477F /* PostListTableViewController.swift */,
+				DAEB69621DB5705100C5D8ED /* PostDetailTableViewController.swift */,
+				DAEB69641DB5713100C5D8ED /* AddPostTableViewController.swift */,
+				DAEB69661DB5720900C5D8ED /* SearchResultsTableViewController.swift */,
+				DAEB696E1DB5945300C5D8ED /* PostTableViewCell.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		DA0DD2B51DB56C900080477F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAEB69681DB5724F00C5D8ED /* Post.swift */,
+				DAEB696A1DB5740E00C5D8ED /* Comment.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DA0DD2B61DB56C9E0080477F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DAEB696C1DB57F4300C5D8ED /* PostController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		DA0DD2B71DB56CAC0080477F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DA0DD2A31DB56B950080477F /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DADA41371DB69285005DA7FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DADA41381DB69285005DA7FF /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +173,14 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = X88QN6EGG9;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -137,8 +220,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA0DD2A21DB56B950080477F /* ViewController.swift in Sources */,
 				DA0DD2A01DB56B950080477F /* AppDelegate.swift in Sources */,
+				DAEB696D1DB57F4300C5D8ED /* PostController.swift in Sources */,
+				DA0DD2B31DB56C4C0080477F /* PostListTableViewController.swift in Sources */,
+				DAEB69671DB5720900C5D8ED /* SearchResultsTableViewController.swift in Sources */,
+				DAEB696B1DB5740E00C5D8ED /* Comment.swift in Sources */,
+				DAEB69691DB5724F00C5D8ED /* Post.swift in Sources */,
+				DAEB69651DB5713100C5D8ED /* AddPostTableViewController.swift in Sources */,
+				DAEB69631DB5705100C5D8ED /* PostDetailTableViewController.swift in Sources */,
+				DAEB696F1DB5945300C5D8ED /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Timeline-Work/Timeline-Work.entitlements";
 				DEVELOPMENT_TEAM = X88QN6EGG9;
 				INFOPLIST_FILE = "Timeline-Work/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -272,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Timeline-Work/Timeline-Work.entitlements";
 				DEVELOPMENT_TEAM = X88QN6EGG9;
 				INFOPLIST_FILE = "Timeline-Work/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -300,6 +392,7 @@
 				DA0DD2B01DB56B950080477F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
