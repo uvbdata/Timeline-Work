@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0B2CF21DB96BFE0017A86E /* AddImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0B2CF11DB96BFE0017A86E /* AddImageTableViewCell.swift */; };
 		DA0DD2A01DB56B950080477F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0DD29F1DB56B950080477F /* AppDelegate.swift */; };
 		DA0DD2A51DB56B950080477F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0DD2A31DB56B950080477F /* Main.storyboard */; };
 		DA0DD2A71DB56B950080477F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0DD2A61DB56B950080477F /* Assets.xcassets */; };
@@ -21,10 +22,10 @@
 		DAEB696B1DB5740E00C5D8ED /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB696A1DB5740E00C5D8ED /* Comment.swift */; };
 		DAEB696D1DB57F4300C5D8ED /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB696C1DB57F4300C5D8ED /* PostController.swift */; };
 		DAEB696F1DB5945300C5D8ED /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB696E1DB5945300C5D8ED /* PostTableViewCell.swift */; };
-		DAED753C1DB8262800B9E900 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAED753B1DB8262800B9E900 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA0B2CF11DB96BFE0017A86E /* AddImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImageTableViewCell.swift; sourceTree = "<group>"; };
 		DA0DD29C1DB56B950080477F /* Timeline-Work.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Timeline-Work.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0DD29F1DB56B950080477F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA0DD2A41DB56B950080477F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		DAEB696A1DB5740E00C5D8ED /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		DAEB696C1DB57F4300C5D8ED /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		DAEB696E1DB5945300C5D8ED /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
-		DAED753B1DB8262800B9E900 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +102,11 @@
 			isa = PBXGroup;
 			children = (
 				DA0DD2B21DB56C4C0080477F /* PostListTableViewController.swift */,
-				DAED753B1DB8262800B9E900 /* File.swift */,
 				DAEB69621DB5705100C5D8ED /* PostDetailTableViewController.swift */,
 				DAEB69641DB5713100C5D8ED /* AddPostTableViewController.swift */,
 				DAEB69661DB5720900C5D8ED /* SearchResultsTableViewController.swift */,
 				DAEB696E1DB5945300C5D8ED /* PostTableViewCell.swift */,
+				DA0B2CF11DB96BFE0017A86E /* AddImageTableViewCell.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -180,6 +180,9 @@
 						DevelopmentTeam = X88QN6EGG9;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -232,8 +235,8 @@
 				DA0DD2B31DB56C4C0080477F /* PostListTableViewController.swift in Sources */,
 				DAEB69671DB5720900C5D8ED /* SearchResultsTableViewController.swift in Sources */,
 				DAEB696B1DB5740E00C5D8ED /* Comment.swift in Sources */,
-				DAED753C1DB8262800B9E900 /* File.swift in Sources */,
 				DAEB69691DB5724F00C5D8ED /* Post.swift in Sources */,
+				DA0B2CF21DB96BFE0017A86E /* AddImageTableViewCell.swift in Sources */,
 				DAEB69651DB5713100C5D8ED /* AddPostTableViewController.swift in Sources */,
 				DAEB69631DB5705100C5D8ED /* PostDetailTableViewController.swift in Sources */,
 				DAEB696F1DB5945300C5D8ED /* PostTableViewCell.swift in Sources */,

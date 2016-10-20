@@ -1,17 +1,15 @@
 //
-//  PostTableViewCell.swift
+//  AddImageTableViewCell.swift
 //  Timeline-Work
 //
-//  Created by Thorsten Boldin on 17/10/2016.
+//  Created by Thorsten Boldin on 20/10/2016.
 //  Copyright © 2016 Thorsten Boldin. All rights reserved.
 //
 
 import UIKit
 
-class PostTableViewCell: UITableViewCell {
+class AddImageTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var timelineWorkImageOutlet: UIImageView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,12 +20,5 @@ class PostTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    func updateWithPost(post: Post, index: IndexPath) {
-        
-        let post = PostController.sharedController.posts[index.row]
-        timelineWorkImageOutlet.image = post.photo
-    }
 
 }
-
