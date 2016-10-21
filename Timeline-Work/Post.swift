@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Post {
+class Post: SearchableRecord {
     
     var photoData: NSData?
     var timestamp: NSDate
@@ -25,5 +25,20 @@ class Post {
         self.timestamp = timestamp
         self.comment = comment
     }
+    
+    func matchesSearchTerm(searchTerm: String) -> Bool {
+        
+        var compare: Bool = false
+        for com in comment {
+            compare = com.matchesSearchTerm(searchTerm: searchTerm)
+            if compare == true {
+               return true
+            } else {
+               continue
+            }
+        }
+        return compare
+    }
+
     
 }

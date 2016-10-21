@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Comment {
+class Comment: SearchableRecord {
     
     var text: String
     var timestamp: NSDate
@@ -19,6 +19,13 @@ class Comment {
         self.text = text
         self.timestamp = timestamp
         self.post = post
+    }
+    
+    func matchesSearchTerm(searchTerm: String) -> Bool {
+
+        let str = self.text
+        guard let _ = str.range(of: searchTerm, options: .caseInsensitive, range: nil, locale: nil) else { return false }
+        return true
     }
     
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var timelineWorkCaptionOutlet: UILabel!
     @IBOutlet weak var timelineWorkImageOutlet: UIImageView!
     
     override func awakeFromNib() {
@@ -27,6 +28,7 @@ class PostTableViewCell: UITableViewCell {
         
         let post = PostController.sharedController.posts[index.row]
         timelineWorkImageOutlet.image = post.photo
+        timelineWorkCaptionOutlet.text = post.comment[0].text
     }
 
 }

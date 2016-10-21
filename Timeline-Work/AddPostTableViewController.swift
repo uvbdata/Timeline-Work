@@ -10,14 +10,38 @@ import UIKit
 
 class AddPostTableViewController: UITableViewController {
 
+    @IBAction func cancelBarButtonItemTapped(_ sender: AnyObject) {
+  
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBOutlet weak var addPostImageOutlet: UIImageView!
+    @IBOutlet weak var addPostCaptionTextFieldOutlet: UITextField!
+    
+    
+    @IBAction func selectImageButtonTapped(_ sender: AnyObject) {
+        
+        addPostImageOutlet.image = #imageLiteral(resourceName: "NoLogo")
+
+    }
+    
+    
+    @IBAction func addPostButtonTapped(_ sender: AnyObject) {
+        
+        guard let myPostImage = addPostImageOutlet.image,
+            let myPostCaption = addPostCaptionTextFieldOutlet.text else {
+               self.fieldErrorAlarm()
+               return
+        }
+        
+        PostController.sharedController.createPost(image: myPostImage, caption: myPostCaption)
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,16 +51,7 @@ class AddPostTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
+   
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -91,5 +106,35 @@ class AddPostTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Error Handling
+    
+    func fieldErrorAlarm() {
+        
+        let alert = UIAlertController(title: "Post Error", message: "Please select an image and insert a caption!", preferredStyle: .alert)
+        
+        let actionCancel = UIAlertAction(title: "Cancel Post", style: .cancel) { (action) in
+            
+            self.dismiss(animated: true, completion: { 
+                return
+            })
+        }
 
+        let actionOk = UIAlertAction(title: "Ok", style: .default, handler: { (action
+            ) in
+            return
+        })
+            
+        alert.addAction(actionCancel)
+        alert.addAction(actionOk)
+        
+        self.present(alert, animated: true, completion: {
+            return
+        })
+            
+        
+        
+    }
+    
+    
 }
