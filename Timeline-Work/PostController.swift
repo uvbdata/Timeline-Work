@@ -23,7 +23,6 @@ class PostController {
         
         let captionData = Comment(text: caption, post: nil)
         
-        Post(
         let newPost =  Post(photoData: imageData, comment: [captionData])
         posts.append(newPost)
         

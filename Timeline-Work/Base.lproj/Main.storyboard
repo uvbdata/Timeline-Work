@@ -54,7 +54,7 @@
                     <navigationItem key="navigationItem" title="Timeline Work" id="Jgn-4n-WUC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="SIn-KA-U55">
                             <connections>
-                                <segue destination="RVv-xO-cwP" kind="show" id="uMI-0q-alO"/>
+                                <segue destination="RVv-xO-cwP" kind="presentation" identifier="AddPostSceneSegue" id="uMI-0q-alO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -150,7 +150,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ok5-1N-JeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="-622"/>
+            <point key="canvasLocation" x="1198" y="-817"/>
         </scene>
         <!--Add Post-->
         <scene sceneID="l2m-Yt-Sff">
@@ -164,7 +164,7 @@
                             <tableViewSection id="PsQ-M7-JEG">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImagePickerCell" rowHeight="502" id="ii1-x3-NLs">
-                                        <rect key="frame" x="0.0" y="99" width="375" height="502"/>
+                                        <rect key="frame" x="0.0" y="35" width="375" height="502"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ii1-x3-NLs" id="EOb-cI-JeC">
                                             <frame key="frameInset" width="375" height="502"/>
@@ -185,7 +185,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CaptionCell" rowHeight="45" id="GA8-5W-K4E">
-                                        <rect key="frame" x="0.0" y="601" width="375" height="45"/>
+                                        <rect key="frame" x="0.0" y="537" width="375" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GA8-5W-K4E" id="tE7-7F-2Om">
                                             <frame key="frameInset" width="375" height="45"/>
@@ -202,7 +202,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddPostCell" rowHeight="88" id="0yU-lM-jVp">
-                                        <rect key="frame" x="0.0" y="646" width="375" height="88"/>
+                                        <rect key="frame" x="0.0" y="582" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0yU-lM-jVp" id="YYi-hN-Wmq">
                                             <frame key="frameInset" width="375" height="88"/>

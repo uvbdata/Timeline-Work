@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CloudKit
 
-class Post: SearchableRecord, CloudKitSyncable {
+class Post: SearchableRecord {
     
     
     public let kRecordType = "Post"
@@ -30,11 +30,11 @@ class Post: SearchableRecord, CloudKitSyncable {
         return image
     }
     
-    required init?(record: CKRecord) {
-        
-        
-        
-    }
+//    required init?(record: CKRecord) {
+//        
+//        
+//        
+//    }
     
     
     init(photoData: NSData?, timestamp: NSDate = NSDate(), comment: [Comment]) {
@@ -44,17 +44,17 @@ class Post: SearchableRecord, CloudKitSyncable {
     }
     
     func matchesSearchTerm(searchTerm: String) -> Bool {
+
         
-        var compare: Bool = false
-        for com in comment {
-            compare = com.matchesSearchTerm(searchTerm: searchTerm)
-            if compare == true {
-               return true
-            } else {
-               continue
-            }
+        let match = comment.filter { com in
+            com.text.lowercased().contains(searchTerm.lowercased())
         }
-        return compare
+        if match.count == 0 {
+            return false
+        } else {
+            return true
+        }
+        
     }
     
     

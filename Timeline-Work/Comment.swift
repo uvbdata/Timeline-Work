@@ -31,11 +31,10 @@ class Comment: SearchableRecord, CloudKitSyncable {
     }
     
     func matchesSearchTerm(searchTerm: String) -> Bool {
-
-        let str = self.text
-        guard let _ = str.range(of: searchTerm, options: .caseInsensitive, range: nil, locale: nil) else { return false }
-        return true
+        
+        return self.text.lowercased().contains(searchTerm.lowercased())
     }
+
     
     required init?(record: CKRecord) {
         
