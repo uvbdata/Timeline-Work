@@ -8,33 +8,40 @@
 
 import UIKit
 
-class AddPostTableViewController: UITableViewController {
+class AddPostTableViewController: UITableViewController, PhotoSelectViewControllerDelegate {
 
+    public var photPickerImage: UIImage = UIImage()
+    
     @IBAction func cancelBarButtonItemTapped(_ sender: AnyObject) {
   
         self.dismiss(animated: true, completion: nil)
     }
     
     
-    @IBOutlet weak var addPostImageOutlet: UIImageView!
+    
+    
+   
     @IBOutlet weak var addPostCaptionTextFieldOutlet: UITextField!
     
     
-    @IBAction func selectImageButtonTapped(_ sender: AnyObject) {
-        
-        addPostImageOutlet.image = #imageLiteral(resourceName: "NoLogo")
-
-    }
     
     
     @IBAction func addPostButtonTapped(_ sender: AnyObject) {
+       
         
-        guard let myPostImage = addPostImageOutlet.image,
-            let myPostCaption = addPostCaptionTextFieldOutlet.text else {
-               self.fieldErrorAlarm()
-               return
+        /*
+        //todo myPostCaption
+        var delegateCaption = " Test "
+        
+        guard let myPostImage = photPickerImage, let myPostCaption = delegateCaption
+             else {
+                self.fieldErrorAlarm()
+                return
         }
-        
+    */
+    
+        let myPostImage = photPickerImage
+        let myPostCaption = " Test "
         PostController.sharedController.createPost(image: myPostImage, caption: myPostCaption)
         
         
@@ -42,6 +49,7 @@ class AddPostTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -134,6 +142,14 @@ class AddPostTableViewController: UITableViewController {
             
         
         
+    }
+    
+    func photoSelectViewControllerSelectedImage() -> UIImage {
+        
+        // todo ImagePicker and delegate
+        let image = UIImage()
+        return image
+    
     }
     
     

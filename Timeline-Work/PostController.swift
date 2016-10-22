@@ -12,6 +12,7 @@ import UIKit
 class PostController {
     
     static let sharedController = PostController()
+    static let cloudKitManager = CloudKitManager()
     
     var posts = [Post]()
     
@@ -22,7 +23,8 @@ class PostController {
         
         let captionData = Comment(text: caption, post: nil)
         
-        let newPost = Post(photoData: imageData, comment: [captionData])
+        Post(
+        let newPost =  Post(photoData: imageData, comment: [captionData])
         posts.append(newPost)
         
     }

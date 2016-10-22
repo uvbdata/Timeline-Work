@@ -118,7 +118,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResultsCell" id="upb-Yp-S8N">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResultsCell" id="upb-Yp-S8N" customClass="PostTableViewCell" customModule="Timeline_Work" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="upb-Yp-S8N" id="ULL-4j-gEO">
@@ -163,30 +163,29 @@
                         <sections>
                             <tableViewSection id="PsQ-M7-JEG">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImagePickerCell" rowHeight="496" id="ii1-x3-NLs">
-                                        <rect key="frame" x="0.0" y="99" width="375" height="496"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImagePickerCell" rowHeight="502" id="ii1-x3-NLs">
+                                        <rect key="frame" x="0.0" y="99" width="375" height="502"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ii1-x3-NLs" id="EOb-cI-JeC">
-                                            <frame key="frameInset" width="375" height="496"/>
+                                            <frame key="frameInset" width="375" height="502"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbv-zA-SRe">
-                                                    <frame key="frameInset" minX="143" minY="6" width="89" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Select Image"/>
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUK-VO-1fc">
                                                     <connections>
-                                                        <action selector="selectImageButtonTapped:" destination="RVv-xO-cwP" eventType="touchUpInside" id="R5n-Ix-syM"/>
+                                                        <segue destination="g69-9B-pNP" kind="embed" id="2OT-cD-OWF"/>
                                                     </connections>
-                                                </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dsc-pP-vLP">
-                                                    <frame key="frameInset" minX="8" minY="44" width="359" height="443"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                </containerView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cUK-VO-1fc" firstAttribute="leading" secondItem="EOb-cI-JeC" secondAttribute="leading" id="7zm-KV-ppC"/>
+                                                <constraint firstAttribute="trailing" secondItem="cUK-VO-1fc" secondAttribute="trailing" id="Cc1-L4-9Kp"/>
+                                                <constraint firstItem="cUK-VO-1fc" firstAttribute="top" secondItem="EOb-cI-JeC" secondAttribute="topMargin" constant="58" id="Cg8-2J-yRk"/>
+                                                <constraint firstAttribute="bottom" secondItem="cUK-VO-1fc" secondAttribute="bottom" id="Xv1-0p-HRt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CaptionCell" rowHeight="45" id="GA8-5W-K4E">
-                                        <rect key="frame" x="0.0" y="595" width="375" height="45"/>
+                                        <rect key="frame" x="0.0" y="601" width="375" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GA8-5W-K4E" id="tE7-7F-2Om">
                                             <frame key="frameInset" width="375" height="45"/>
@@ -203,7 +202,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddPostCell" rowHeight="88" id="0yU-lM-jVp">
-                                        <rect key="frame" x="0.0" y="640" width="375" height="88"/>
+                                        <rect key="frame" x="0.0" y="646" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0yU-lM-jVp" id="YYi-hN-Wmq">
                                             <frame key="frameInset" width="375" height="88"/>
@@ -237,12 +236,46 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addPostCaptionTextFieldOutlet" destination="iUZ-Iw-bew" id="dHs-Da-YlY"/>
-                        <outlet property="addPostImageOutlet" destination="Dsc-pP-vLP" id="L6k-T1-0ui"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RrR-10-YFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2092" y="-817.24137931034488"/>
+        </scene>
+        <!--Photo Select View Controller-->
+        <scene sceneID="4WV-kX-R9a">
+            <objects>
+                <viewController id="g69-9B-pNP" customClass="PhotoSelectViewController" customModule="Timeline_Work" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="335-da-0JZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="vIl-sb-p2C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ssw-9H-R4T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="435.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dsc-pP-vLP">
+                                <frame key="frameInset" minX="8" minY="56" width="359" height="365"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nea-HA-Ejf">
+                                <frame key="frameInset" minX="143" minY="18" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Select Image"/>
+                                <connections>
+                                    <action selector="selectImageButtonTapped:" destination="g69-9B-pNP" eventType="touchUpInside" id="CKE-Wd-35Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="addPostImageOutlet" destination="Dsc-pP-vLP" id="KdM-KK-gAw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Opb-0f-pfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2933.5999999999999" y="-1115.8920539730136"/>
         </scene>
     </scenes>
 </document>

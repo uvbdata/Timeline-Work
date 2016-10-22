@@ -7,8 +7,17 @@
 //
 
 import Foundation
+import CloudKit
 
-class Comment: SearchableRecord {
+class Comment: SearchableRecord, CloudKitSyncable {
+    
+    public let kRecordType = "Comment"
+    
+    var cloudKitRecordID: CKRecordID?
+    var recordType: String {
+        return kRecordType
+    }
+
     
     var text: String
     var timestamp: NSDate
@@ -27,5 +36,23 @@ class Comment: SearchableRecord {
         guard let _ = str.range(of: searchTerm, options: .caseInsensitive, range: nil, locale: nil) else { return false }
         return true
     }
+    
+    required init?(record: CKRecord) {
+        
+        return nil
+        
+    }
+    
+}
+
+extension CKRecord {
+    
+    /*
+    convenience init(comment: Comment) {
+        self.init()
+        
+    }
+     */
+    
     
 }

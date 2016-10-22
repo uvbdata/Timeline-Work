@@ -8,9 +8,19 @@
 
 import Foundation
 import UIKit
+import CloudKit
 
-class Post: SearchableRecord {
+class Post: SearchableRecord, CloudKitSyncable {
     
+    
+    public let kRecordType = "Post"
+    
+    var cloudKitRecordID: CKRecordID?
+    var recordType: String {
+        return kRecordType
+    }
+    
+
     var photoData: NSData?
     var timestamp: NSDate
     var comment: [Comment]
@@ -19,6 +29,13 @@ class Post: SearchableRecord {
         guard let image = UIImage(data: photoData as! Data) else { return nil }
         return image
     }
+    
+    required init?(record: CKRecord) {
+        
+        
+        
+    }
+    
     
     init(photoData: NSData?, timestamp: NSDate = NSDate(), comment: [Comment]) {
         self.photoData = photoData ?? NSData()
@@ -39,6 +56,20 @@ class Post: SearchableRecord {
         }
         return compare
     }
-
     
+    
+    
+}
+
+extension CKRecord {
+    
+    /*
+    convenience init?(myPost: Post) {
+
+        // todo
+        // self.init()
+        
+    }
+    */
+
 }
