@@ -16,7 +16,6 @@ class SearchResultsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     

@@ -9,25 +9,14 @@
 import UIKit
 import Foundation
 
-class PostListTableViewController: UITableViewController, UISearchResultsUpdating {
+class PostListTableViewController: UITableViewController, UISearchResultsUpdating, UISearchControllerDelegate {
 
    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSearchController()
-
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        tableView.reloadData()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,10 +34,6 @@ class PostListTableViewController: UITableViewController, UISearchResultsUpdatin
         cell.updateWithPost(post: post, index: indexPath)
         return cell
     }
-    
-
-    
-   
 
     // MARK: - Navigation
 
@@ -73,6 +58,7 @@ class PostListTableViewController: UITableViewController, UISearchResultsUpdatin
         searchResultsController.dimsBackgroundDuringPresentation = true
         self.definesPresentationContext = true
         tableView.tableHeaderView = searchResultsController.searchBar
+        searchResultsController.delegate = self
 
     }
     
@@ -81,6 +67,4 @@ class PostListTableViewController: UITableViewController, UISearchResultsUpdatin
         NSLog("updateSearchResults")
     
     }
-    
-
 }

@@ -8,42 +8,46 @@
 
 import UIKit
 
-class PhotoSelectViewController: UIViewController {
+class PhotoSelectViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+
+{
     
     weak var delegate: PhotoSelectViewControllerDelegate?
+    
+    let imagePicker = UIImagePickerController()
     
     @IBOutlet weak var addPostImageOutlet: UIImageView!
     
     @IBAction func selectImageButtonTapped(_ sender: AnyObject) {
         
-        addPostImageOutlet.image = #imageLiteral(resourceName: "NoLogo")
-        
+       // addPostImageOutlet.image = #imageLiteral(resourceName: "NoLogo")
+       imagePicker.allowsEditing = false
+       imagePicker.sourceType = .photoLibrary
+       present(imagePicker, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        imagePicker.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - UIImagePicker Methods
+ 
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            addPostImageOutlet.image = pickedImage
+            delegate?.photoSelectViewControllerSelectedImage(image: pickedImage)
+        } else {
+            print("Picking image is not in correct format")
+        }
+        dismiss(animated: true, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
-    */
-
 }
 
 protocol PhotoSelectViewControllerDelegate: class {
-    func photoSelectViewControllerSelectedImage() -> UIImage
+    func photoSelectViewControllerSelectedImage(image: UIImage?)
 }

@@ -89,14 +89,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4b-9S-c4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1897" y="122"/>
+            <point key="canvasLocation" x="1612" y="278"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Timeline-Work-->
         <scene sceneID="uh1-V0-JtF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y6n-8B-Gzg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TimelineNC" title="Timeline-Work" automaticallyAdjustsScrollViewInsets="NO" id="Y6n-8B-Gzg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wz6-jk-sEU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Wz6-jk-sEU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -148,21 +148,6 @@
             </objects>
             <point key="canvasLocation" x="118" y="860"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="FWR-vX-WQB">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="THg-M9-rOr" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Wg-w1-JO1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ok5-1N-JeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1198" y="-817"/>
-        </scene>
         <!--Add Post-->
         <scene sceneID="l2m-Yt-Sff">
             <objects>
@@ -183,7 +168,7 @@
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUK-VO-1fc">
                                                     <connections>
-                                                        <segue destination="g69-9B-pNP" kind="embed" id="2OT-cD-OWF"/>
+                                                        <segue destination="g69-9B-pNP" kind="embed" identifier="PhotoPickerSegue" id="VMs-U7-9T2"/>
                                                     </connections>
                                                 </containerView>
                                             </subviews>
@@ -251,7 +236,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RrR-10-YFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2092" y="-817.24137931034488"/>
+            <point key="canvasLocation" x="1799" y="-589"/>
         </scene>
         <!--Photo Select View Controller-->
         <scene sceneID="4WV-kX-R9a">
@@ -265,7 +250,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="435.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dsc-pP-vLP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dsc-pP-vLP">
                                 <frame key="frameInset" minX="8" minY="56" width="359" height="365"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -280,13 +265,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vvo-jc-G70"/>
                     <connections>
                         <outlet property="addPostImageOutlet" destination="Dsc-pP-vLP" id="KdM-KK-gAw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Opb-0f-pfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2933.5999999999999" y="-1115.8920539730136"/>
+            <point key="canvasLocation" x="2343" y="-1091"/>
         </scene>
     </scenes>
 </document>
