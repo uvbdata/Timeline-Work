@@ -10,6 +10,8 @@ import UIKit
 
 class AddPostTableViewController: UITableViewController, PhotoSelectViewControllerDelegate {
 
+
+    
     public var photPickerImage: UIImage = UIImage()
     
     @IBAction func cancelBarButtonItemTapped(_ sender: AnyObject) {

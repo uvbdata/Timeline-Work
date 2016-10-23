@@ -132,8 +132,19 @@
                             <outlet property="delegate" destination="bPB-sK-mLT" id="lPT-jc-BWg"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="6kl-27-UMj" id="6jd-YM-c7U"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6S-TK-VNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="6kl-27-UMj">
+                    <connections>
+                        <outlet property="delegate" destination="bPB-sK-mLT" id="QMx-BT-gmS"/>
+                        <outlet property="searchContentsController" destination="bPB-sK-mLT" id="xBz-Ii-NYb"/>
+                        <outlet property="searchResultsDataSource" destination="bPB-sK-mLT" id="OSm-kc-WKU"/>
+                        <outlet property="searchResultsDelegate" destination="bPB-sK-mLT" id="EML-me-gwC"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="118" y="860"/>
         </scene>
