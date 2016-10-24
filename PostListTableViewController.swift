@@ -52,6 +52,7 @@ class PostListTableViewController: UITableViewController, UISearchResultsUpdatin
              else { return }
             dvc.post = myPost
             dvc.delegate = self
+            dvc.navigationController?.title = myPost.comment[0].text
         }
         
         // Create a new Post -> Show addPostVC

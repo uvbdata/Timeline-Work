@@ -15,15 +15,16 @@ class AddPostTableViewController: UITableViewController, PhotoSelectViewControll
     var delegate: AddPostTableViewControllerDelegate? = nil
     
     @IBAction func cancelBarButtonItemTapped(_ sender: AnyObject) {
-        
+        dismiss(animated: true, completion: nil)
     }
    
     @IBOutlet weak var addPostCaptionTextFieldOutlet: UITextField!
     
     @IBAction func addPostButtonTapped(_ sender: AnyObject) {
        
-        let myPostImage = self.photoPickerImage
-        let myPostCaption = " Test "
+        let myPostImage = self.photoPickerImage 
+        let myPostCaption = addPostCaptionTextFieldOutlet.text ?? "New Post"
+        
         PostController.sharedController.createPost(image: myPostImage, caption: myPostCaption)
 
         dismiss(animated: true, completion: nil)
