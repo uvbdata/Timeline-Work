@@ -8,13 +8,14 @@
 
 import UIKit
 
-class AddPostTableViewController: UITableViewController, PhotoSelectViewControllerDelegate, UINavigationControllerDelegate {
+class AddPostTableViewController: UITableViewController, PhotoSelectViewControllerDelegate {
 
     var photoPickerImage: UIImage = UIImage()
     
+    var delegate: AddPostTableViewControllerDelegate? = nil
+    
     @IBAction func cancelBarButtonItemTapped(_ sender: AnyObject) {
-  
-        self.dismiss(animated: true, completion: nil)
+        
     }
    
     @IBOutlet weak var addPostCaptionTextFieldOutlet: UITextField!
@@ -24,6 +25,8 @@ class AddPostTableViewController: UITableViewController, PhotoSelectViewControll
         let myPostImage = self.photoPickerImage
         let myPostCaption = " Test "
         PostController.sharedController.createPost(image: myPostImage, caption: myPostCaption)
+
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -70,4 +73,8 @@ class AddPostTableViewController: UITableViewController, PhotoSelectViewControll
             dvc?.delegate = self
         }
     }
+}
+
+protocol AddPostTableViewControllerDelegate {
+    func AddPostTableViewControllerDidFinished(controller: AddPostTableViewController)
 }

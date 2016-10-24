@@ -14,7 +14,7 @@ class PostController {
     static let sharedController = PostController()
     static let cloudKitManager = CloudKitManager()
     
-    var posts = [Post]()
+    var posts = [Post?]()
     
     
     func createPost(image: UIImage, caption: String) {
@@ -33,12 +33,12 @@ class PostController {
         let newComment = Comment(text: text, post: post)
         for (index, element) in posts.enumerated() {
             print("Item \(index): \(element)")
-            if element.photo != post.photo &&
-               element.timestamp != post.timestamp {
+            if element?.photo != post.photo &&
+               element?.timestamp != post.timestamp {
                  print()
             }
                 else {
-                   self.posts[index].comment.append(newComment)
+                   self.posts[index]?.comment.append(newComment)
                    return
                 }
         }

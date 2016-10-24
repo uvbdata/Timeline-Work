@@ -9,12 +9,17 @@
 import UIKit
 import Foundation
 
-class PostListTableViewController: UITableViewController, UISearchResultsUpdating, UISearchControllerDelegate {
+class PostListTableViewController: UITableViewController, UISearchResultsUpdating, UISearchControllerDelegate, PostDetailTableViewControllerDelegate, AddPostTableViewControllerDelegate {
 
    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSearchController()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -30,7 +35,7 @@ class PostListTableViewController: UITableViewController, UISearchResultsUpdatin
             return UITableViewCell()
         }
         
-        let post: Post = PostController.sharedController.posts[indexPath.row]
+        let post: Post = PostController.sharedController.posts[indexPath.row]!
         cell.updateWithPost(post: post, index: indexPath)
         return cell
     }
@@ -41,13 +46,19 @@ class PostListTableViewController: UITableViewController, UISearchResultsUpdatin
      
         // Show Detail Information about the Post
         if segue.identifier == "postDetailSegue" {
-            
+            guard let dvc = segue.destination as? PostDetailTableViewController,
+                  let postPath = tableView.indexPathForSelectedRow,
+                  let myPost = PostController.sharedController.posts[postPath.row]
+             else { return }
+            dvc.post = myPost
+            dvc.delegate = self
         }
         
         // Create a new Post -> Show addPostVC
         if segue.identifier == "addPostDetailSegue" {
-            
-            
+            guard let dvc = segue.destination as? AddPostTableViewController
+                else { return }
+            dvc.delegate = self
         }
     }
     
@@ -67,4 +78,13 @@ class PostListTableViewController: UITableViewController, UISearchResultsUpdatin
         NSLog("updateSearchResults")
     
     }
+    
+    func PostDetailTableVCDidFinished(controller: PostDetailTableViewController) {
+        controller.navigationController?.popViewController(animated: true)
+    
+    }
+    func AddPostTableViewControllerDidFinished(controller: AddPostTableViewController) {
+        controller.navigationController?.popViewController(animated: true)
+    }
+
 }

@@ -27,8 +27,8 @@ class PostTableViewCell: UITableViewCell {
     func updateWithPost(post: Post, index: IndexPath) {
         
         let post = PostController.sharedController.posts[index.row]
-        timelineWorkImageOutlet.image = post.photo
-        timelineWorkCaptionOutlet.text = post.comment[0].text
+        timelineWorkImageOutlet.image = post?.photo
+        timelineWorkCaptionOutlet.text = post?.comment[0].text
     }
 
 }
