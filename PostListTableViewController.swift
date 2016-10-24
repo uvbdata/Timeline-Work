@@ -9,12 +9,13 @@
 import UIKit
 import Foundation
 
-class PostListTableViewController: UITableViewController, UISearchResultsUpdating, UISearchControllerDelegate, PostDetailTableViewControllerDelegate, AddPostTableViewControllerDelegate {
+class PostListTableViewController: UITableViewController, UISearchResultsUpdating,  PostDetailTableViewControllerDelegate, AddPostTableViewControllerDelegate {
 
-   
+    var searchController: UISearchController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpSearchController()
+        newSetUpSearchController()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,14 +64,15 @@ class PostListTableViewController: UITableViewController, UISearchResultsUpdatin
         }
     }
     
-    func setUpSearchController() {
+    func newSetUpSearchController() {
        
-        let searchResultsController = UISearchController(searchResultsController: SearchResultsTableViewController())
-        searchResultsController.searchResultsUpdater = self
-        searchResultsController.dimsBackgroundDuringPresentation = true
+        
+        let storyboard = SearchResultsTableViewController()
+        self.searchController = UISearchController(searchResultsController: storyboard)
+        searchController?.searchResultsUpdater = self
+        searchController?.dimsBackgroundDuringPresentation = true
         self.definesPresentationContext = true
-        tableView.tableHeaderView = searchResultsController.searchBar
-        searchResultsController.delegate = self
+       tableView.tableHeaderView = searchController?.searchBar
 
     }
     

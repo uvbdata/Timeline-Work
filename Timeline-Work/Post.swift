@@ -30,12 +30,12 @@ class Post: SearchableRecord {
         return image
     }
     
-//    required init?(record: CKRecord) {
-//        
+//    required convenience init?(record: CKRecord) {
+//        self.init()
 //        
 //        
 //    }
-    
+//    
     
     init(photoData: NSData?, timestamp: NSDate = NSDate(), comment: [Comment]) {
         self.photoData = photoData ?? NSData()

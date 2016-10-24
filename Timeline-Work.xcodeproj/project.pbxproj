@@ -13,7 +13,7 @@
 		DA0DD2AA1DB56B950080477F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0DD2A81DB56B950080477F /* LaunchScreen.storyboard */; };
 		DA0DD2B31DB56C4C0080477F /* PostListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0DD2B21DB56C4C0080477F /* PostListTableViewController.swift */; };
 		DA3A773F1DB935CB002D9834 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A773E1DB935CB002D9834 /* CloudKitManager.swift */; };
-		DA7B48431DB9D9EF0081FAF0 /* Spencer in Resources */ = {isa = PBXBuildFile; fileRef = DA7B48421DB9D9EF0081FAF0 /* Spencer */; };
+		DA7B48431DB9D9EF0081FAF0 /* Spencer&Ryan in Resources */ = {isa = PBXBuildFile; fileRef = DA7B48421DB9D9EF0081FAF0 /* Spencer&Ryan */; };
 		DA7B48471DB9DB360081FAF0 /* SearchableRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7B48461DB9DB360081FAF0 /* SearchableRecord.swift */; };
 		DA9451E41DBA66B900392825 /* PhotoSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9451E31DBA66B900392825 /* PhotoSelectViewController.swift */; };
 		DA9451E61DBA730D00392825 /* CloudKitSyncable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9451E51DBA730D00392825 /* CloudKitSyncable.swift */; };
@@ -36,7 +36,7 @@
 		DA0DD2AB1DB56B950080477F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA0DD2B21DB56C4C0080477F /* PostListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostListTableViewController.swift; path = ../PostListTableViewController.swift; sourceTree = "<group>"; };
 		DA3A773E1DB935CB002D9834 /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
-		DA7B48421DB9D9EF0081FAF0 /* Spencer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Spencer; sourceTree = "<group>"; };
+		DA7B48421DB9D9EF0081FAF0 /* Spencer&Ryan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Spencer&Ryan"; sourceTree = "<group>"; };
 		DA7B48461DB9DB360081FAF0 /* SearchableRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchableRecord.swift; path = ../SearchableRecord.swift; sourceTree = "<group>"; };
 		DA9451E31DBA66B900392825 /* PhotoSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSelectViewController.swift; sourceTree = "<group>"; };
 		DA9451E51DBA730D00392825 /* CloudKitSyncable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitSyncable.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				DA0DD2A61DB56B950080477F /* Assets.xcassets */,
-				DA7B48421DB9D9EF0081FAF0 /* Spencer */,
+				DA7B48421DB9D9EF0081FAF0 /* Spencer&Ryan */,
 				DA0DD2A81DB56B950080477F /* LaunchScreen.storyboard */,
 				DA0DD2AB1DB56B950080477F /* Info.plist */,
 			);
@@ -228,7 +228,7 @@
 				DA0DD2AA1DB56B950080477F /* LaunchScreen.storyboard in Resources */,
 				DA0DD2A71DB56B950080477F /* Assets.xcassets in Resources */,
 				DA0DD2A51DB56B950080477F /* Main.storyboard in Resources */,
-				DA7B48431DB9D9EF0081FAF0 /* Spencer in Resources */,
+				DA7B48431DB9D9EF0081FAF0 /* Spencer&Ryan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
