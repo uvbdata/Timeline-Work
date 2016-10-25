@@ -42,7 +42,11 @@ class SearchResultsTableViewController: UITableViewController {
 }
 
 extension SearchResultsTableViewController: UISearchControllerDelegate {
-    
+    func updateResultsArray(results: [SearchableRecord]) {
+//        guard let myResultsArray = self.results as SearchableRecord else { return }
+//        self.resultsArray = myResultsArray as? [Post]
+//        self.tableView.reloadData()
+    }
 }
 
 

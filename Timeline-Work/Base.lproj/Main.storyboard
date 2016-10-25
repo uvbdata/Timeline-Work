@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Y6n-8B-Gzg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Y6n-8B-Gzg">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -71,17 +71,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" axis="vertical" id="oX6-69-hRj">
+                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" id="oX6-69-hRj">
                             <rect key="frame" x="0.0" y="64" width="375" height="246"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jg7-dX-fQp">
+                                    <state key="normal" title="Share2"/>
+                                    <connections>
+                                        <action selector="share2ButtonTapped:" destination="I5I-z6-B8v" eventType="touchUpInside" id="7cD-oV-qmG"/>
+                                    </connections>
+                                </button>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y54-Fj-je0"/>
-                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1sI-YM-T4z">
+                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="6Kv-M4-8Jg">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="oF5-1m-XZ1"/>
+                                    </constraints>
                                     <items>
-                                        <barButtonItem title="Item" id="oGP-ja-RgL"/>
+                                        <barButtonItem title="Share" id="HvC-b1-xEa">
+                                            <connections>
+                                                <action selector="shareButtonTapped:" destination="I5I-z6-B8v" id="Afc-SN-sZq"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </items>
                                 </toolbar>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="6Kv-M4-8Jg" firstAttribute="top" secondItem="y54-Fj-je0" secondAttribute="bottom" id="XZN-oH-78M"/>
+                            </constraints>
                         </stackView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postDetailCell" textLabel="nP4-SN-IZQ" detailTextLabel="VVg-bn-e4Q" style="IBUITableViewCellStyleValue1" id="16F-YP-8qg" customClass="PostTableViewCell" customModule="Timeline_Work" customModuleProvider="target">
@@ -114,13 +130,15 @@
                             <outlet property="delegate" destination="I5I-z6-B8v" id="zcn-Lp-cTQ"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="postImage" destination="y54-Fj-je0" id="AHO-Pe-mWU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4b-9S-c4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2060" y="522"/>
+            <point key="canvasLocation" x="1900" y="517"/>
         </scene>
         <!--Timeline-Work-->
         <scene sceneID="uh1-V0-JtF">

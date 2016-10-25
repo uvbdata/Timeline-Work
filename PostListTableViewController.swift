@@ -15,7 +15,7 @@ class PostListTableViewController: UITableViewController, UISearchResultsUpdatin
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newSetUpSearchController()
+        setUpSearchController()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,7 +64,7 @@ class PostListTableViewController: UITableViewController, UISearchResultsUpdatin
         }
     }
     
-    func newSetUpSearchController() {
+    func setUpSearchController() {
        
         
         let storyboard = SearchResultsTableViewController()
@@ -79,6 +79,7 @@ class PostListTableViewController: UITableViewController, UISearchResultsUpdatin
     func updateSearchResults(for searchController: UISearchController) {
         
         NSLog("updateSearchResults")
+         
     
     }
     

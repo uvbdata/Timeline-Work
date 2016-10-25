@@ -11,12 +11,43 @@ import UIKit
 class PostDetailTableViewController: UITableViewController {
 
     @IBOutlet weak var postImage: UIImageView!
+    
     var delegate: PostDetailTableViewControllerDelegate? = nil
     
     var post: Post?
     
+    
+    @IBAction func share2ButtonTapped(_ sender: AnyObject) {
+        
+        let activityViewController = UIActivityViewController(
+            activityItems: ["Check out this beer I liked using Beer Tracker.", postImage.image],
+            applicationActivities: nil)
+        present(activityViewController, animated: true, completion: nil)
+    }
+    
+    
+    
+    @IBAction func shareButtonTapped(_ sender: AnyObject) {
+        
+        
+        let objectsToShare = ["Share Timeline", postImage.image ] as [Any]
+        
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.excludedActivityTypes = []
+        self.present(activityVC, animated: true, completion: nil)
+        
+    }
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.doesRelativeDateFormatting = true
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setToolbarHidden(false, animated: true)
         guard let image = self.post?.photo else { return }
         postImage.image = image
         self.title = post?.comment[0].text
@@ -31,6 +62,7 @@ class PostDetailTableViewController: UITableViewController {
     }
 
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "postDetailCell", for: indexPath)
@@ -39,12 +71,8 @@ class PostDetailTableViewController: UITableViewController {
                 else { return cell }
         
         cell.textLabel?.text = comment.text
+        cell.detailTextLabel?.text = dateFormatter.string(from: comment.timestamp  as Date)
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd mm yyyy"
-        
-        
-        cell.detailTextLabel?.text = dateFormatter.string(from: (comment.timestamp as? Date)!)
         
         return cell
 
