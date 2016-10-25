@@ -14,8 +14,7 @@ class AddPostTableViewController: UITableViewController, PhotoSelectViewControll
     
     var delegate: AddPostTableViewControllerDelegate? = nil
     
-  
-    @IBAction func cancelBarButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func cancelBarButtonItemTapped(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
     }
    

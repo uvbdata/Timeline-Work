@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="285"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vin-nI-7KY" id="EVp-SG-yUh">
-                                    <frame key="frameInset" width="375" height="284"/>
+                                    <frame key="frameInset" width="375" height="285"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fwH-cN-PEo"/>
@@ -54,7 +54,7 @@
                     <navigationItem key="navigationItem" title="Timeline Work" id="Jgn-4n-WUC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="SIn-KA-U55">
                             <connections>
-                                <segue destination="uf2-Cc-xrp" kind="presentation" identifier="addPostDetailSegue" id="uMI-0q-alO"/>
+                                <segue destination="RVv-xO-cwP" kind="presentation" identifier="AddPostSceneSegue" id="uMI-0q-alO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -143,7 +143,7 @@
         <!--Search Results Table View Controller-->
         <scene sceneID="irC-tv-NBn">
             <objects>
-                <tableViewController storyboardIdentifier="SearchTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bPB-sK-mLT" customClass="SearchResultsTableViewController" customModule="Timeline_Work" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="bPB-sK-mLT" customClass="SearchResultsTableViewController" customModule="Timeline_Work" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="a58-K8-4K6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,7 +153,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="upb-Yp-S8N" id="ULL-4j-gEO">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -191,10 +191,10 @@
                             <tableViewSection id="PsQ-M7-JEG">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImagePickerCell" rowHeight="502" id="ii1-x3-NLs">
-                                        <rect key="frame" x="0.0" y="99" width="375" height="502"/>
+                                        <rect key="frame" x="0.0" y="35" width="375" height="502"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ii1-x3-NLs" id="EOb-cI-JeC">
-                                            <frame key="frameInset" width="375" height="501"/>
+                                            <frame key="frameInset" width="375" height="502"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUK-VO-1fc">
@@ -212,10 +212,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CaptionCell" rowHeight="45" id="GA8-5W-K4E">
-                                        <rect key="frame" x="0.0" y="601" width="375" height="45"/>
+                                        <rect key="frame" x="0.0" y="537" width="375" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GA8-5W-K4E" id="tE7-7F-2Om">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please insert a caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iUZ-Iw-bew">
@@ -229,10 +229,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddPostCell" rowHeight="88" id="0yU-lM-jVp">
-                                        <rect key="frame" x="0.0" y="646" width="375" height="88"/>
+                                        <rect key="frame" x="0.0" y="582" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0yU-lM-jVp" id="YYi-hN-Wmq">
-                                            <frame key="frameInset" width="375" height="87"/>
+                                            <frame key="frameInset" width="375" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naU-Qg-Vp5">
@@ -254,25 +254,20 @@
                             <outlet property="delegate" destination="RVv-xO-cwP" id="gVv-FI-yfy"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="MIn-7j-8IC"/>
-                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Add Post" id="IsD-8U-oNB">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="bTG-Iv-1yC">
                             <connections>
-                                <action selector="cancelBarButtonTapped:" destination="RVv-xO-cwP" id="YdK-VO-Nhz"/>
+                                <action selector="cancelBarButtonItemTapped:" destination="RVv-xO-cwP" id="alm-cH-QKG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addPostCaptionTextFieldOutlet" destination="iUZ-Iw-bew" id="dHs-Da-YlY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RrR-10-YFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationItem title="Add Post" id="sCp-F5-WPP"/>
             </objects>
-            <point key="canvasLocation" x="2736.8000000000002" y="-589.65517241379314"/>
+            <point key="canvasLocation" x="1799" y="-589"/>
         </scene>
         <!--Photo Select View Controller-->
         <scene sceneID="4WV-kX-R9a">
@@ -308,25 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Opb-0f-pfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3280.8000000000002" y="-1091.3793103448277"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="3ua-om-xuH">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uf2-Cc-xrp" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="itk-zF-i7F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="RVv-xO-cwP" kind="relationship" relationship="rootViewController" id="mx0-DJ-p6g"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WGe-ql-gJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1797.5999999999999" y="-589.65517241379314"/>
+            <point key="canvasLocation" x="2343" y="-1091"/>
         </scene>
     </scenes>
 </document>
