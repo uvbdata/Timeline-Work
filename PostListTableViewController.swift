@@ -67,12 +67,23 @@ class PostListTableViewController: UITableViewController, UISearchResultsUpdatin
     func newSetUpSearchController() {
        
         
+<<<<<<< HEAD
         let storyboard = SearchResultsTableViewController()
+=======
+        let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchTVC") as? SearchResultsTableViewController
+>>>>>>> 7899c6fc3d417ce30c1b17c996184e27ef1556f8
         self.searchController = UISearchController(searchResultsController: storyboard)
         searchController?.searchResultsUpdater = self
         searchController?.dimsBackgroundDuringPresentation = true
         self.definesPresentationContext = true
+<<<<<<< HEAD
        tableView.tableHeaderView = searchController?.searchBar
+=======
+//        
+        searchController?.searchBar.sizeToFit()
+        searchController?.searchBar.searchBarStyle = .default
+        tableView.tableHeaderView = searchController?.searchBar
+>>>>>>> 7899c6fc3d417ce30c1b17c996184e27ef1556f8
 
     }
     

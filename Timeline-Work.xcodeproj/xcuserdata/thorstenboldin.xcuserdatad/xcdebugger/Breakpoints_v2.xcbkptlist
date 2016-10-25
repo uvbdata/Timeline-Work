@@ -26,11 +26,19 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PostListTableViewController.swift"
+<<<<<<< HEAD
             timestampString = "499035234.781997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
             endingLineNumber = "81"
+=======
+            timestampString = "499034232.036337"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+>>>>>>> 7899c6fc3d417ce30c1b17c996184e27ef1556f8
             landmarkName = "updateSearchResults(for:)"
             landmarkType = "7">
          </BreakpointContent>

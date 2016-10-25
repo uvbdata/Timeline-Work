@@ -143,7 +143,7 @@
         <!--Search Results Table View Controller-->
         <scene sceneID="irC-tv-NBn">
             <objects>
-                <tableViewController id="bPB-sK-mLT" customClass="SearchResultsTableViewController" customModule="Timeline_Work" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SearchTVC" id="bPB-sK-mLT" customClass="SearchResultsTableViewController" customModule="Timeline_Work" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="a58-K8-4K6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
