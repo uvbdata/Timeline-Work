@@ -66,29 +66,25 @@ class PostListTableViewController: UITableViewController, UISearchResultsUpdatin
     
     func setUpSearchController() {
        
-        
         let storyboard = SearchResultsTableViewController()
         self.searchController = UISearchController(searchResultsController: storyboard)
         searchController?.searchResultsUpdater = self
         searchController?.dimsBackgroundDuringPresentation = true
         self.definesPresentationContext = true
        tableView.tableHeaderView = searchController?.searchBar
-
     }
     
     func updateSearchResults(for searchController: UISearchController) {
         
         NSLog("updateSearchResults")
-         
-    
     }
     
     func PostDetailTableVCDidFinished(controller: PostDetailTableViewController) {
-        controller.navigationController?.popViewController(animated: true)
+       // controller.navigationController?.popViewController(animated: true)
     
     }
     func AddPostTableViewControllerDidFinished(controller: AddPostTableViewController) {
-        controller.navigationController?.popViewController(animated: true)
+      // controller.navigationController?.popViewController(animated: true)
     }
 
 }

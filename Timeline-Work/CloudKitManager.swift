@@ -16,13 +16,10 @@ private let ModificationDateKey = "modificationDate"
 
 class CloudKitManager {
 	
-	let publicDatabase = CKContainer.default().publicCloudDatabase
+    let publicDatabase = CKContainer.default().publicCloudDatabase
 	let privateDatabase = CKContainer.default().privateCloudDatabase
 	
-	init() {
-		checkCloudKitAvailability()
-	}
-	
+    
 	// MARK: - User Info Discovery
 	
 	func fetchLoggedInUserRecord(_ completion: ((_ record: CKRecord?, _ error: Error? ) -> Void)?) {

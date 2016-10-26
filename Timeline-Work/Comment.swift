@@ -46,12 +46,8 @@ class Comment: SearchableRecord, CloudKitSyncable {
 
 extension CKRecord {
     
-    /*
-    convenience init(comment: Comment) {
-        self.init()
-        
+    convenience init?(myComment: Comment) {
+        self.init(recordType: myComment.kRecordType)
     }
-     */
-    
-    
 }
+

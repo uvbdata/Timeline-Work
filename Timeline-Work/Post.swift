@@ -12,7 +12,6 @@ import CloudKit
 
 class Post: SearchableRecord {
     
-    
     public let kRecordType = "Post"
     
     var cloudKitRecordID: CKRecordID?
@@ -20,7 +19,6 @@ class Post: SearchableRecord {
         return kRecordType
     }
     
-
     var photoData: NSData?
     var timestamp: NSDate
     var comment: [Comment]
@@ -30,11 +28,22 @@ class Post: SearchableRecord {
         return image
     }
     
-//    required init?(record: CKRecord) {
-//        
-//        
-//        
-//    }
+    var photo2data: NSData? {
+        guard let myPhoto = photo else { return nil }
+        guard let imageData: NSData = UIImageJPEGRepresentation(myPhoto, .greatestFiniteMagnitude) as NSData? else { return nil }
+        return imageData
+    }
+    
+    private var temporaryPhotoURL: URL {
+        let temporaryDirectory = NSTemporaryDirectory()
+        
+        let temporaryDirectoryURL = URL(fileURLWithPath: temporaryDirectory)
+        
+        let fileURL = temporaryDirectoryURL.appendingPathComponent(NSUUID().uuidString).appendingPathExtension("jpg")
+        
+        photoData?.write(to: fileURL, atomically: true)
+        return fileURL
+    }
     
     
     init(photoData: NSData?, timestamp: NSDate = NSDate(), comment: [Comment]) {
@@ -45,7 +54,6 @@ class Post: SearchableRecord {
     
     func matchesSearchTerm(searchTerm: String) -> Bool {
 
-        
         let match = comment.filter { com in
             com.text.lowercased().contains(searchTerm.lowercased())
         }
@@ -54,22 +62,17 @@ class Post: SearchableRecord {
         } else {
             return true
         }
-        
     }
-    
-    
-    
 }
 
 extension CKRecord {
     
-    /*
-    convenience init?(myPost: Post) {
-
-        // todo
-        // self.init()
+    convenience init?(myPost: Post, myTimestamp: NSDate, myAssetData: NSData) {
+    
         
+        self.init(recordType: myPost.kRecordType)
+        setObject(myTimestamp, forKey: "timestamp")
+        //photoData = myAssetData
+        //setObject(self.photo2Data(myAsset), forKey: "image")
     }
-    */
-
 }
