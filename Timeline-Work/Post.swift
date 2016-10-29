@@ -12,11 +12,13 @@ import CloudKit
 
 class Post: SearchableRecord {
     
-    public let kRecordType = "Post"
+    public static let kRecordType = "Post"
+    public static let kTimestamp = "timestamp"
+    public static let kPhotoData = "photodata"
     
     var cloudKitRecordID: CKRecordID?
     var recordType: String {
-        return kRecordType
+        return Post.kRecordType
     }
     
     var photoData: NSData?
@@ -34,7 +36,7 @@ class Post: SearchableRecord {
         return imageData
     }
     
-    private var temporaryPhotoURL: URL {
+    var temporaryPhotoURL: URL {
         let temporaryDirectory = NSTemporaryDirectory()
         
         let temporaryDirectoryURL = URL(fileURLWithPath: temporaryDirectory)
@@ -66,13 +68,11 @@ class Post: SearchableRecord {
 }
 
 extension CKRecord {
-    
-    convenience init?(myPost: Post, myTimestamp: NSDate, myAssetData: NSData) {
-    
-        
-        self.init(recordType: myPost.kRecordType)
-        setObject(myTimestamp, forKey: "timestamp")
-        //photoData = myAssetData
-        //setObject(self.photo2Data(myAsset), forKey: "image")
+
+    convenience init(post myPost: Post) {
+        self.init(recordType: myPost.recordType)
+        self.setObject(myPost.timestamp as CKRecordValue, forKey: Post.kTimestamp)
+        let ckphoto = myPost.temporaryPhotoURL
+        self.setObject(CKAsset(fileURL: ckphoto), forKey: Post.kPhotoData)
     }
 }

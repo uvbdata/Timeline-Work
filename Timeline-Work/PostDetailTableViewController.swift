@@ -20,7 +20,7 @@ class PostDetailTableViewController: UITableViewController {
     @IBAction func share2ButtonTapped(_ sender: AnyObject) {
         
         let activityViewController = UIActivityViewController(
-            activityItems: ["Check out this beer I liked using Beer Tracker.", postImage.image],
+            activityItems: ["Check out this beer I liked using Beer Tracker.", postImage.image as Any],
             applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
     }
@@ -30,7 +30,7 @@ class PostDetailTableViewController: UITableViewController {
     @IBAction func shareButtonTapped(_ sender: AnyObject) {
         
         
-        let objectsToShare = ["Share Timeline", postImage.image ] as [Any]
+        let objectsToShare = ["Share Timeline", postImage.image as Any ] as [Any]
         
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         activityVC.excludedActivityTypes = []

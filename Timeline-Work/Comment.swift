@@ -11,11 +11,16 @@ import CloudKit
 
 class Comment: SearchableRecord, CloudKitSyncable {
     
-    public let kRecordType = "Comment"
+    static let kRecordType = "Comment"
+    static let kText = "text"
+    static let kTimestamp = "timestamp"
+    static let kPost = "post"
+    
     
     var cloudKitRecordID: CKRecordID?
+  
     var recordType: String {
-        return kRecordType
+        return Comment.kRecordType
     }
 
     
@@ -43,11 +48,26 @@ class Comment: SearchableRecord, CloudKitSyncable {
     }
     
 }
-
 extension CKRecord {
     
-    convenience init?(myComment: Comment) {
-        self.init(recordType: myComment.kRecordType)
+    convenience init?(comment myComment: Comment) {
+       
+        guard let post = myComment.post else
+        {
+            NSLog("no post object")
+            return nil
+        }
+     
+        self.init(recordType: Comment.kRecordType)
+        
+        self.setObject(myComment.timestamp as CKRecordValue, forKey: Comment.kTimestamp)
+        self.setObject(myComment.text as CKRecordValue?, forKey: Comment.kText)
+        self.setObject(myComment.timestamp, forKey: Comment.kTimestamp)
+        guard let myCommentPostId = post.cloudKitRecordID else { return }
+        let myCommentRef = CKReference(recordID: myCommentPostId, action: .deleteSelf)
+        self.setObject(myCommentRef, forKey: Comment.kPost)
+        
     }
 }
+
 
