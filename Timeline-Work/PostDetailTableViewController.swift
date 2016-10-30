@@ -19,7 +19,7 @@ class PostDetailTableViewController: UITableViewController {
     @IBAction func addCommentAction(_ sender: Any) {
         
         var commentTextField: UITextField?
-        let alert = UIAlertController(title: "Your comment", message: "Please create your comment for this post.", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Your comment", message: "Please create your comment for this post.", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "the best comment ever"
             textField.keyboardType = .asciiCapable

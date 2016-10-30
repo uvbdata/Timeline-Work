@@ -41,6 +41,11 @@ class PostController {
         
         // create ckpost
         createCKPost(post: newPost) { }
+        
+        // create ckcomment
+        guard let postId = newPost.cloudKitRecordID else { return }
+        let newComment = newPost.comment[0]
+        createCKComment(comment: newComment, postId: postId) { }
     }
     
     func createComment(text: String, post: Post?) {
@@ -53,7 +58,6 @@ class PostController {
         // create ckcomment
         guard let postId = getPost.cloudKitRecordID else { return }
         createCKComment(comment: newComment, postId: postId) { }
-        
     }
     
     
