@@ -17,30 +17,50 @@ class PostController {
     
     var posts = [Post?]()
     
+    // MARK: ___Model functions___
+    
     // append new Post to memory and call CloudKit creation func for Post & Comment
     func createPost(image: UIImage, caption: String) {
         
         // create data from image
         let imageData = UIImagePNGRepresentation(image) as NSData?
         
-        // create new objects post and command
-        let newComment = Comment(text: caption, post: nil)
-        let newPost = Post(photoData: imageData, comment: [newComment])
+        // create new object post
+        let newPost = Post(photoData: imageData, comment: [])
         
+        // Update Model
         posts.append(newPost)
         
-        // Update Comment with post object
+        // Create new comment
+        createComment(text: caption, post: newPost)
+       
+        // Update comment reference to post object
         if let i = newPost.comment.index(where: { ($0.text == caption && $0.post == nil) }) {
             newPost.comment[i].post = newPost
         }
         
-        createCKPost(post: newPost, comment: newComment) {
-            
-        }
+        // create ckpost
+        createCKPost(post: newPost) { }
+    }
+    
+    func createComment(text: String, post: Post?) {
+        
+        // create new Comment for given Post
+        guard let getPost = post else { return }
+        let newComment = Comment(text: text, post: getPost)
+        getPost.comment.append(newComment)
+        
+        // create ckcomment
+        guard let postId = getPost.cloudKitRecordID else { return }
+        createCKComment(comment: newComment, postId: postId) { }
         
     }
     
-    func createCKPost(post myPost: Post, comment myComment: Comment, completion: @escaping ( ) -> Void) {
+    
+    // MARK: ____CloudKit related functions___
+    
+    
+    func createCKPost(post myPost: Post, completion: @escaping () -> Void) {
     
         let newPostRecord = CKRecord(post: myPost)
         PostController.cloudKitManager.saveRecord(newPostRecord) { (record, error) in
@@ -52,9 +72,6 @@ class PostController {
                 return
             }
             myPost.cloudKitRecordID = record.recordID
-            self.createCKComment(comment: myComment, postId: myPost.cloudKitRecordID!, completion: {
-                 
-            })
         }
     }
     

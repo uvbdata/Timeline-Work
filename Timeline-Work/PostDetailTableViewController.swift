@@ -16,7 +16,35 @@ class PostDetailTableViewController: UITableViewController {
     
     var post: Post?
     
+    @IBAction func addCommentAction(_ sender: Any) {
+        
+        var commentTextField: UITextField?
+        let alert = UIAlertController(title: "Your comment", message: "Please create your comment for this post.", preferredStyle: .actionSheet)
+        alert.addTextField { (textField) in
+            textField.placeholder = "the best comment ever"
+            textField.keyboardType = .asciiCapable
+            commentTextField = textField
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
+            return
+        }
+        
+        let commentAction = UIAlertAction(title: "Add Comment", style: .default) { (_) in
+            guard let commentText = commentTextField?.text
+                else { return }
+            PostController.sharedController.createComment(text: commentText, post: self.post)
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(commentAction)
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
     
+    @IBAction func followPostAction(_ sender: Any) {
+    }
     @IBAction func share2ButtonTapped(_ sender: AnyObject) {
         
         let activityViewController = UIActivityViewController(
